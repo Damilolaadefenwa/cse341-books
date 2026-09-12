@@ -25,7 +25,7 @@ Build a read-only Books API in Express with MongoDB storage.
 - **Error Status:** 500 Internal Server Error
 - **Success Response Body:**
 
-````json
+```json
 [
   {
     "id": "b1",
@@ -34,6 +34,7 @@ Build a read-only Books API in Express with MongoDB storage.
     "publicationDate": "2021-08-17"
   }
 ]
+```
 
 ### 2. GET /books/:id
 
@@ -44,34 +45,40 @@ Build a read-only Books API in Express with MongoDB storage.
 - **Success Response Body:**
 
 ```json
-[
-  {
-    "id": "b1",
-    "author": "Maya Rivera",
-    "title": "Patterns of Light",
-    "publicationDate": "2021-08-17"
-  }
-]
+{
+  "id": "b1",
+  "author": "Maya Rivera",
+  "title": "Patterns of Light",
+  "publicationDate": "2021-08-17"
+}
+```
 
 - **Not found response body example:**
+
+```json
 {
   "message": "Book not found"
 }
+```
 
 ## Error Handling
+
 - Do not expose stack traces or internal database errors to clients.
 - Return a simple message for 500 internal server errors:
 
+```json
 {
   "message": "Internal server error"
 }
+```
 
 ## Implementation Notes
+
 - Store records in a MongoDB collection named `books`.
 - Seed the collection with sample book documents needed for testing.
-- Store the MongoDB connection string securely in .env.
+- Store the MongoDB connection string securely in `.env`.
 
 ## Out of Scope for Week 1
+
 - POST, PUT, DELETE routes
-- Authentication and authorization
-````
+- Authentication and authorization.
