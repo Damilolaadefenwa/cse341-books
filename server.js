@@ -13,6 +13,7 @@ if (!PORT) {
 const startServer = async () => {
     try {
         await connectToDb();
+        
         app.listen(PORT, () => {
             console.log(`Server is listening at http://127.0.0.1:${PORT}`)
         });
