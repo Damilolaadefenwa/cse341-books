@@ -1,11 +1,13 @@
 import express from "express";
-import { getBooksHandler } from "./controllers/books.js";
+import { getBooksHandler, getBookByIdHandler } from "./controllers/books.js";
 
 const router = express.Router();
 
-//add a route for GET /books
-//use getBooksHandler as the controller function for that route
+//Add a route for GET /books
+//use getBooksHandler as well other future one as the controller function for that route
 router.get('/books', getBooksHandler);
+router.get('/books/:id', getBookByIdHandler);
+
 
 export default router;
 
