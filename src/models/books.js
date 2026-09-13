@@ -1,5 +1,6 @@
 import { getDb } from "../db/connect.js";
 
+//1. Get all books
 const getAllBooks = async () => {
   const db = getDb();
   const collection = db.collection('books');
@@ -7,4 +8,11 @@ const getAllBooks = async () => {
   return books;
 };
 
-export { getAllBooks };
+//2. Retrieve single book by id
+const getBookById = async (bookId) => {
+  const db = getDb();
+  const collection = db.collection('books');
+  return await collection.findOne({ id: bookId });
+};
+
+export { getAllBooks, getBookById };
